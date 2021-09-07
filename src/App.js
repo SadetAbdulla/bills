@@ -1,23 +1,21 @@
-import logo from './logo.svg';
 import './App.css';
+import  {FamilySection}from './components/FamilySection/FamilySection'
+import  {BillsSection}from './components/BillsSection/BillsSection'
+
 
 function App() {
+  var data = {
+    customerId: "12345",
+    bills: [{
+      invoiceId: "67890",
+      amount: 1200,
+      type: "evn"
+    }]
+  }
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div>
+      <BillsSection data={data} />
+      <FamilySection />
     </div>
   );
 }
